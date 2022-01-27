@@ -11,6 +11,7 @@
         <th scope="col">Title</th>
         <th scope="col">Series</th>
         <th scope="col">Price</th>
+        <th scope="col">Action</th>
       </tr>
     </thead>
     <tbody>
@@ -22,12 +23,13 @@
         <td>{{$comic->title}}</td>
         <td>{{$comic->series}}</td>
         <td>{{$comic->price}}</td>
+        <td>XXX</td>
       </tr>
           
       @endforeach
       
     </tbody>
   </table>
-
+  {{$comicList->links()}}
 </main>
 @endsection
