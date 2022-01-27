@@ -2,6 +2,6 @@
 
 @section('content')
 <main>
-  <h1>Gestione Fumetti</h1>
+  <h1>Home</h1>
 </main>
 @endsection
