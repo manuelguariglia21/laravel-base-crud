@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Comic;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class ComicController extends Controller
 {
@@ -69,7 +70,11 @@ class ComicController extends Controller
      */
     public function edit($id)
     {
-        //
+        $comic = Comic::find($id);
+        if($comic){
+            return view('comics.edit', compact('comic'));
+        }
+        abort(404, 'Prodotto non presente nel database');
     }
 
     /**
@@ -79,9 +84,14 @@ class ComicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Comic $comic)
     {
-        //
+        $data = $request->all();
+
+        $data['slug'] = $this->createSlug($data['title']);
+        $comic->update($data);
+
+        return redirect()->route('comics.show', $comic);
     }
 
     /**
@@ -93,5 +103,9 @@ class ComicController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    private function createSlug($string){
+        return  Str::slug($string,'-');
     }
 }
