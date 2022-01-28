@@ -43,7 +43,7 @@ class ComicController extends Controller
 
         $new_comic->save();
 
-        return redirect()->route('comic.show', $new_comic);
+        return redirect()->route('comics.show', $new_comic);
 
     }
 
