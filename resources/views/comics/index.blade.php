@@ -9,7 +9,11 @@
     </div>
   @endif
 
-  <h1>Gestione Fumetti</h1>
+  <div class="jumbo">
+    <span>Lista Comics</span>
+    <div class="overlay"></div>
+    <img src="https://www.dccomics.com/sites/default/files/dc-hero_20220128_FL_MonkeyPrince_61f4817d9689a9.90049566.jpg" alt="batman">
+  </div>
 
   <table class="table table-striped">
     <thead>
@@ -36,7 +40,7 @@
           <form action="{{ route('comics.destroy', $comic) }}" onsubmit="return confirm('sei sicuro di voler eliminare {{$comic->title}}')" method="POST">
             @csrf
             @method('DELETE')
-            <button type="submit" class="btn btn-danger">DELETE</button></td>
+            <button type="submit" class="btn btn-danger">Delete</button></td>
           </form>
         </td>
       </tr>

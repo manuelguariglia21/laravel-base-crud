@@ -1,0 +1,23 @@
+.action-area{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  .action-btn{
+    margin-right: 10px;
+  }
+}
+.show-box{
+  margin: 25px 0;
+  padding: 25px 0;
+  background-color: $primary;
+  .info-box{
+    color: white;
+    ul{
+      list-style: none;
+    }
+  }
+  .image-box{
+    display: flex;
+    justify-content: center;
+  }
+}
