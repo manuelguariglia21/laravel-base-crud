@@ -14,7 +14,7 @@ class ComicController extends Controller
      */
     public function index()
     {
-        $comicList = Comic::paginate(4);
+        $comicList = Comic::orderBy('id', 'desc')->paginate(4); //ordinati
         //dump($comicList);
         return view('comics.index', compact('comicList'));
     }
@@ -104,7 +104,7 @@ class ComicController extends Controller
     {
         $comic->delete();
 
-        return redirect()->route('comics.index');
+        return redirect()->route('comics.index')->with("deleted", "Il fumetto \" $comic->title  \" è stato eliminato con successo.");
     }
 
     private function createSlug($string){
