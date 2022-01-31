@@ -38,11 +38,35 @@ class ComicController extends Controller
     {
         $data = $request->all();
 
+        $request->validate(
+            [
+                'title' => 'required',
+                'description' => 'required',
+                'thumb' => 'required',
+                'price' => 'required',
+                'series' => 'required',
+                'sale_date' => 'required',
+                'type' => 'required',
+                'slug' => 'required',
+            ],
+            [
+                'title.required' => 'title è un campo obbligatorio',
+                'description.required' => 'description è un campo obbligatorio',
+                'thumb.required' => 'thumb è un campo obbligatorio',
+                'price.required' => 'price è un campo obbligatorio',
+                'series.required' => 'series è un campo obbligatorio',
+                'sale_date.required' => 'sale date è un campo obbligatorio',
+                'type.required' => 'type è un campo obbligatorio',
+                'slug.required' => 'slug è un campo obbligatorio',
+            ],
+        );
+
         $new_comic = new Comic();
 
         $new_comic->fill($data);
 
         $new_comic->save();
+
 
         return redirect()->route('comics.show', $new_comic);
 

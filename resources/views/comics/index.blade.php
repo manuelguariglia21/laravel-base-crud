@@ -2,7 +2,6 @@
 
 @section('content')
 <main>
-  
   {{-- delete message --}}
   @if (session('deleted'))
     <div class="alert alert-success" role="alert">
