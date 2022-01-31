@@ -33,7 +33,7 @@
 
       {{-- description --}}
       <label for="description">Description</label>
-      <textarea class="form-control @error('description') is-invalid @enderror" name="description" id="description" placeholder="Enter description"></textarea>
+      <textarea class="form-control @error('description') is-invalid @enderror" name="description" id="description" placeholder="Enter description">{{old('description')}}</textarea>
 
       @error('description')
 		    <p class='text-danger'>
@@ -43,7 +43,7 @@
 
       {{-- thumb --}}
       <label for="thumb">Thumb</label>
-      <input type="text" class="form-control @error('thumb') is-invalid @enderror" name="thumb" id="thumb" placeholder="Enter thumb's url">
+      <input type="text" class="form-control @error('thumb') is-invalid @enderror" name="thumb" id="thumb" placeholder="Enter thumb's url" value = '{{old('thumb')}}'>
 
       @error('thumb')
 		    <p class='text-danger'>
@@ -53,7 +53,7 @@
 
       {{-- price --}}
       <label for="price">Price</label>
-      <input type="number" class="form-control @error('price') is-invalid @enderror" name="price" id="price" placeholder="Enter price">
+      <input type="number" class="form-control @error('price') is-invalid @enderror" name="price" id="price" placeholder="Enter price" value = '{{old('price')}}'>
 
       @error('price')
 		    <p class='text-danger'>
@@ -63,7 +63,7 @@
 
       {{-- series --}}
       <label for="series">Series</label>
-      <input type="text" class="form-control @error('series') is-invalid @enderror" name="series" id="series" placeholder="Enter series">
+      <input type="text" class="form-control @error('series') is-invalid @enderror" name="series" id="series" placeholder="Enter series" value = '{{old('series')}}'>
 
       @error('series')
 		    <p class='text-danger'>
@@ -73,7 +73,7 @@
 
       {{-- sale_date --}}
       <label for="sale_date">Sale Date</label>
-      <input type="text" class="form-control @error('sale_date') is-invalid @enderror" name="sale_date" id="sale_date" placeholder="Enter sale date">
+      <input type="text" class="form-control @error('sale_date') is-invalid @enderror" name="sale_date" id="sale_date" placeholder="Enter sale date" value = '{{old('sale_date')}}'>
 
       @error('sale_date')
 		    <p class='text-danger'>
@@ -83,7 +83,7 @@
 
       {{-- type --}}
       <label for="type">Type</label>
-      <input type="text" class="form-control @error('type') is-invalid @enderror" name="type"  id="type" placeholder="Enter type">
+      <input type="text" class="form-control @error('type') is-invalid @enderror" name="type"  id="type" placeholder="Enter type" value = '{{old('type')}}'>
 
       @error('type')
 		    <p class='text-danger'>
@@ -93,7 +93,7 @@
 
       {{-- slug --}}
       <label for="slug">Slug</label>
-      <input type="text" class="form-control @error('title') is-invalid @enderror" name="slug"  id="slug" placeholder="Enter slug">
+      <input type="text" class="form-control @error('title') is-invalid @enderror" name="slug"  id="slug" placeholder="Enter slug" value = '{{old('slug')}}'>
 
       @error('slug')
 		    <p class='text-danger'>
